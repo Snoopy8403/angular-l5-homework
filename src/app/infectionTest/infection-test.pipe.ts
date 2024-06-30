@@ -7,8 +7,10 @@ import { InfectionTest } from './infecttion-test.model';
 })
 export class InfectionTestPipe implements PipeTransform {
 
-  transform(infection: InfectionTest, ...args: unknown[]): unknown {
-    return infection;
+  transform(infection: InfectionTest, ...args: unknown[]): any {
+    
+    
+    return infection.dayTest;
   }
 
 }
