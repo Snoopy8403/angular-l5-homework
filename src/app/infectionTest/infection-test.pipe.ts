@@ -7,10 +7,13 @@ import { InfectionTest } from './infecttion-test.model';
 })
 export class InfectionTestPipe implements PipeTransform {
 
-  transform(infection: InfectionTest, ...args: unknown[]): any {
-    
-    
-    return infection.dayTest;
+  transform(infection: InfectionTest, iWantTheTruth = false): any {
+     
+    if (iWantTheTruth) {
+      return `Igaz adatok alapján a napi tesztek száma: ${infection.dayTest}, új fertőzöttek száma: ${infection.newInfected} és a korházban jelenleg ápoltak száma: ${infection.inHospital}`;      
+    }else {
+      return `A statisztika szerint a napi tesztek száma: ${infection.dayTest * 2}, új fertőzöttek száma: ${infection.newInfected} és a korházban jelenleg ápoltak száma: ${infection.inHospital / 3} fő amiből mindannyian oltatlan idős krónikus betegek`;      
+    }
   }
 
 }

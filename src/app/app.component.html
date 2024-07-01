@@ -1,3 +1,5 @@
 <div>
-  <p *ngFor="let infection of infections">{{ infection | infectionTest }}</p>
+  <p *ngFor="let infection of infections">{{ infection | infectionTest:true }}</p>
+
+  <p *ngFor="let infection of infections" [appInfection]="infection">{{ infection | infectionTest }}</p>
 </div>

@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { InfectionTest } from './infectionTest/infecttion-test.model';
 import { CommonModule } from '@angular/common';
 import { InfectionTestPipe } from './infectionTest/infection-test.pipe';
+import { InfectionDirective } from './infectionTest/infection.directive';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, InfectionTestPipe],
+  imports: [RouterOutlet, CommonModule, InfectionTestPipe, InfectionDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
